@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 
-export const GET = (req: NextApiRequest, res: NextApiResponse) => {
+export const GET = (req: NextRequest, res: NextResponse) => {
   console.log(req.headers);
-  return res.json({ message: JSON.stringify(req.headers) });
+  return NextResponse.json({ message: JSON.stringify(req.headers) });
 };
